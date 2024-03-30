@@ -6,3 +6,27 @@
     transform: translate(-50%,-50%);
     color: black;
 }
+.image-container {
+    display: flex;
+    align-items: center; /* Logoların dikey hizalanması */
+}
+
+.logo-list {
+    display: flex;
+    list-style: none; /* Madde işaretlerini kaldırma */
+    margin: 0;
+    padding: 0;
+}
+
+.logo-list li {
+    margin-right: 10px; /* Logo aralarındaki boşluk */
+}
+
+.logo-list li:last-child {
+    margin-right: 0; /* Son logonun sağ boşluğu */
+}
+
+.logo-list li a {
+    font-size: 24px; /* Logo boyutu */
+    color: #000; /* Logo rengi */
+}
