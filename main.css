@@ -6,27 +6,23 @@
     transform: translate(-50%,-50%);
     color: black;
 }
-.image-container {
+/* Flexbox kullanarak içeriği yan yana hizala */
+.skills-container {
     display: flex;
-    align-items: center; /* Logoların dikey hizalanması */
+    align-items: center; /* Dikey hizalama */
 }
 
+/* Logoların boyutunu ve aralarındaki boşluğu ayarla */
 .logo-list {
     display: flex;
-    list-style: none; /* Madde işaretlerini kaldırma */
-    margin: 0;
+    list-style: none;
     padding: 0;
+    margin-left: 20px; /* Logoların sol boşluğu */
 }
 
-.logo-list li {
-    margin-right: 10px; /* Logo aralarındaki boşluk */
-}
-
-.logo-list li:last-child {
-    margin-right: 0; /* Son logonun sağ boşluğu */
-}
-
+/* Logoların boyutunu büyüt */
 .logo-list li a {
-    font-size: 24px; /* Logo boyutu */
+    font-size: 32px; /* Logo boyutu */
     color: #000; /* Logo rengi */
+    margin-right: 20px; /* Logolar arasındaki boşluk */
 }
