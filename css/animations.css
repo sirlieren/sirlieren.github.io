@@ -1,7 +1,7 @@
-@keyframes fadeIn {
+@keyframes fadeInUp-soft {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(18px);
     }
 
     to {
@@ -11,19 +11,29 @@
 }
 
 .fade-in {
-    animation: fadeIn 1s ease forwards;
+    animation: fadeInUp-soft 0.9s ease forwards;
 }
 
 .fade-in-delay {
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 0.3s;
+    animation: fadeInUp-soft 0.9s ease forwards;
+    animation-delay: 0.22s;
     opacity: 0;
 }
 
 .fade-in-delay-2 {
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 0.6s;
+    animation: fadeInUp-soft 0.9s ease forwards;
+    animation-delay: 0.42s;
     opacity: 0;
 }
 
-/* Add more animations... */
+/* Subtle reveal on scroll */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
