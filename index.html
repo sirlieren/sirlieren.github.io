@@ -1,307 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eren Sırlı</title>
-    <!-- Typography -->
+    <title>Eren Sırlı — Game Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">eren</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">eren sırlı</a>
+            <ul class="nav-links">
+                <li><a href="#home" data-tr="ana sayfa" data-en="home">home</a></li>
+                <li><a href="#projects" data-tr="projeler" data-en="projects">projects</a></li>
+                <li><a href="#about" data-tr="hakkımda" data-en="about">about me</a></li>
+                <li><a href="#contact" data-tr="iletişim" data-en="contact">contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-pill">
+                <span class="pill-dot"></span>
+                <span data-tr="müsaitim" data-en="available">available </span>
+            </a>
+
+            <button class="burger" aria-label="Menü" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home" data-tr="ana sayfa" data-en="home">home</a>
+            <a href="#projects" data-tr="projeler" data-en="projects">projects</a>
+            <a href="#about" data-tr="hakkımda" data-en="about">about me</a>
+            <a href="#contact" data-tr="iletişim" data-en="contact">contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section id="home" class="hero">
-        <div id="particles-js"></div>
         <div class="hero-content">
-            <h1 class="fade-in">Eren Sırlı</h1>
-            <h2 class="fade-in-delay">Unity Game Developer & Mobile App Developer</h2>
-            <p class="fade-in-delay-2">Dream, Code, and Achieve </p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <p class="hero-eyebrow" data-tr="oyun geliştirici · yazılım mühendisi · yaratıcı"
+                data-en="game developer · software engineer · creator">game developer · software developer
+            </p>
+            <h1 class="hero-name" data-reveal data-delay="1">Eren<br>Sırlı.</h1>
+            <p class="hero-sub" data-reveal data-delay="2" data-tr="5 yıldır Unity ile oyunlar yapıyorum."
+                data-en="Building games with Unity for 5 years.">Building games with Unity for 5 years</p>
+            <a href="#projects" class="cta" data-reveal data-delay="3">
+                <span data-tr="Çalışmalarımı gör" data-en="View my work">View my work</span>
+                <span class="cta-arrow">→</span>
+            </a>
+        </div>
+        <div class="hero-scroll" data-reveal data-delay="4">
+            <span class="scroll-line"></span>
+            <span class="scroll-label">scroll</span>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- PROJECTS -->
     <section id="projects" class="projects">
-        <div class="projects-container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <div class="section-line"></div>
-            </div>
+        <div class="section-header" data-reveal>
+            <span class="section-eyebrow" data-tr="seçili işler" data-en="selected work">featured projects</span>
+            <h2>
+                <span data-tr="Seçili" data-en="Selected">featured</span><br>
+                <em data-tr="İşler." data-en="Work.">projects.</em>
+            </h2>
+        </div>
 
-            <div class="projects-wrapper">
-                <button class="scroll-btn scroll-left">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
+        <div class="projects-grid">
 
-                <div class="projects-slider">
-                    <div class="projects-track">
-                        <!-- Project Cards -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/images/project1.png" alt="Project 1">
-                                <div class="project-overlay">
-                                    <h3>Bug Bane</h3>
-                                    <div class="project-links">
-                                        <a href="#" target="_blank">
-                                            <a href="https://store.steampowered.com/app/3830770/Bug_Bane_Survivors/"
-                                                target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/images/project4.png" alt="Project 4">
-                                <div class="project-overlay">
-                                    <h3>Foes of Legacy</h3>
-                                    <div class="project-links">
-                                        <a href="https://store.steampowered.com/app/3976130/Foes_of_Legacy_Survivors/"
-                                            target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/images/project3.jpg" alt="Project 3">
-                                <div class="project-overlay">
-                                    <h3>Blank 99</h3>
-                                    <div class="project-links">
-                                        <a href="https://www.youtube.com/@blank-GD" target="_blank"><i
-                                                class="fas fa-external-link-alt"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/images/pandemicPapers.jpg" alt="Project 2">
-                                <div class="project-overlay">
-                                    <h3>The Pandemic Papers(in development)</h3>
-                                    <!-- <div class="project-links">
-                                        <a href="https://www.youtube.com/watch?v=ynO8z08ZLr8&t=59s" target="_blank"><i
-                                                class="fas fa-external-link-alt"></i></a>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="assets/images/dataScraper.jpg" alt="Cheers Choice">
-                                <div class="project-overlay">
-                                    <h3>Influencer Data Scraper (in development)</h3>
-                                    <!-- <div class="project-links">
-                                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                                    </div> -->
-                                    <!-- </div>-->
-                                </div>
-                            </div>
+            <article class="project-card" data-reveal>
+                <a href="https://store.steampowered.com/app/3830770/Bug_Bane_Survivors/" target="_blank"
+                    class="card-link">
+                    <div class="card-image">
+                        <img src="assets/images/project1.png" alt="Bug Bane Survivors">
+                        <div class="card-overlay">
+                            <span class="overlay-link">
+                                <span data-tr="Steam'de gör" data-en="View on Steam">View on Steam</span>
+                                <span>↗</span>
+                            </span>
                         </div>
                     </div>
+                    <div class="card-info">
+                        <h3>Bug Bane</h3>
+                        <p>Roguelike · Unity · Steam</p>
+                    </div>
+                </a>
+            </article>
 
-                    <button class="scroll-btn scroll-right">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+            <article class="project-card" data-reveal data-delay="1">
+                <a href="https://store.steampowered.com/app/3976130/Foes_of_Legacy_Survivors/" target="_blank"
+                    class="card-link">
+                    <div class="card-image">
+                        <img src="assets/images/project4.png" alt="Foes of Legacy">
+                        <div class="card-overlay">
+                            <span class="overlay-link">
+                                <span data-tr="Steam'de gör" data-en="View on Steam">View on Steam</span>
+                                <span>↗</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Foes of Legacy</h3>
+                        <p>Survivors · Unity · Steam</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card" data-reveal data-delay="2">
+                <a href="https://www.youtube.com/@blank-GD" target="_blank" class="card-link">
+                    <div class="card-image">
+                        <img src="assets/images/project3.jpg" alt="Blank 99">
+                        <div class="card-overlay">
+                            <span class="overlay-link">
+                                <span data-tr="YouTube'da gör" data-en="View on YouTube">View on YouTube</span>
+                                <span>↗</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Blank 99</h3>
+                        <p>YouTube</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card project-card--wip" data-reveal data-delay="3">
+                <div class="card-link">
+                    <div class="card-image">
+                        <img src="assets/images/pandemicPapers.jpg" alt="The Pandemic Papers">
+                        <div class="card-overlay card-overlay--wip">
+                            <span class="wip-badge" data-tr="Geliştiriliyor" data-en="In Development">In
+                                Development</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>The Pandemic Papers</h3>
+                        <p data-tr="Hikâye Oyunu · Unity" data-en="Simulation · Chill · Unity">Simulation · Chill ·
+                            Unity</p>
+                    </div>
                 </div>
-            </div>
+            </article>
+
+            <article class="project-card project-card--wip" data-reveal data-delay="4">
+                <div class="card-link">
+                    <div class="card-image">
+                        <img src="assets/images/scout.png" alt="Influencer Data Scraper">
+                        <div class="card-overlay card-overlay--wip">
+                            <span class="wip-badge" data-tr="Geliştiriliyor" data-en="In Development">In
+                                Development</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Scout - Influencer Data Scraper</h3>
+                        <p data-tr="Influencer Analitik Aracı · React Native"
+                            data-en="Influencer Analytics Tool · React Native">Influencer Analytics Tool · JavaScript ·
+                            HTML/CSS · Axios · REST APIs
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-header">
-                <h2>About Me</h2>
-                <div class="section-line"></div>
+        <div class="about-inner">
+            <div class="about-left" data-reveal>
+                <span class="section-eyebrow" data-tr="hakkımda" data-en="about me">about me</span>
+                <h2>
+                    <span data-tr="Oyun geliştirici," data-en="Game dev,">DEV,</span><br>
+                    <em data-tr="içten dışa." data-en="inside &amp; out.">inside out.</em>
+                </h2>
+                <p class="about-bio"
+                    data-tr="Yaklaşık 5 yıldır Unity ile oyunlar ve interaktif sistemler geliştiriyorum. Gameplay programming, AI behaviors, procedural systems ve optimization konularında deneyim sahibiyim."
+                    data-en="I've been building games and interactive systems with Unity for about 5 years. I have experience in gameplay programming, AI behaviors, procedural systems, and optimization.">
+                    I've been building games and interactive systems with Unity for about 5 years. I have experience in
+                    gameplay programming, AI behaviors, procedural systems, and optimization.
+                </p>
+                <p class="about-bio"
+                    data-tr="Son dönemde mobil uygulama geliştirme ve yazılım ürünleri üzerine yoğunlaşıyorum. Kullanıcı deneyimi ve performans odaklı çözümler üretiyorum. Pazarlama ve ürün görünürlüğünü teknik geliştirme kadar önemli görüyorum."
+                    data-en="Lately I've been focusing on mobile app development and software products. I build solutions centered around user experience and performance. I consider marketing and product visibility just as important as technical development.">
+                    Lately I've been focusing on mobile app development and software products. I build solutions
+                    centered around user experience and performance. I consider marketing and product visibility just as
+                    important as technical development.
+                </p>
+                <a href="assets/images/01ErenSirliResumeGD.pdf" target="_blank" class="cta cta--outline">
+                    <span data-tr="CV'yi gör" data-en="View CV">View Game Dev. CV</span>
+                    <span class="cta-arrow">↗</span>
+                </a>
+                <a href="assets/images/01ErenSirliResumeSD.pdf" target="_blank" class="cta cta--outline">
+                    <span data-tr="CV'yi gör" data-en="View CV">View Software CV</span>
+                    <span class="cta-arrow">↗</span>
+                </a>
             </div>
 
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-frame">
-                        <img src="assets/images/profile.jpg" alt="Profile Picture">
-                    </div>
-                    <div class="experience-cards">
-                        <div class="exp-card">
-                            <span class="exp-number">5+</span>
-                            <span class="exp-text">Years of Experience</span>
-                        </div>
-                        <div class="exp-card">
-                            <span class="exp-number">10+</span>
-                            <span class="exp-text">Projects Completed</span>
-                        </div>
-                    </div>
-                    <a href="assets/resume.pdf" target="_blank" class="cv-button">
-                        <i class="fas fa-file-alt"></i>
-                        <span>Inspect CV</span>
-                    </a>
+            <div class="about-right">
+                <div class="about-photo-wrap" data-reveal data-delay="1">
+                    <img src="assets/images/profile.jpg" alt="Eren Sırlı">
                 </div>
-
-                <div class="about-info">
-                    <div class="bio-text">
-                        <p>I have been developing 2D and 3D games with Unity for 5
-                            years.</p>
-                        <p> In the FPS, roguelike and
-                            endless
-                            runner projects I've completed, I've
-                            been involved in both programming and
-                            visual content
-                            creation.
-                            I have experience in technical areas such as procedural
-                            systems, optimization and gameplay
-                            mechanics. I also place importance on marketing and actively
-                            conduct research in this area.
-                            Currently, I'm working on mobile app development and
-                            learning React Native. Additionally, I
-                            run a
-                            YouTube channel where I share educational content and
-                            tutorials about Unity.</p>
+                <div class="about-stats">
+                    <div class="stat" data-reveal data-delay="2">
+                        <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label" data-tr="yıl deneyim" data-en="years exp.">years exp.</span>
                     </div>
-
-                    <div class="skills-section">
-                        <h3>Technical Skills</h3>
-                        <div class="skills-container">
-                            <div class="skill-category">
-                                <h4>Game Development</h4>
-                                <div class="skill-items">
-                                    <div class="skill-item">
-                                        <span class="skill-name">Unity</span>
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="skill-item">
-                                        <span class="skill-name">C#</span>
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="skill-item">
-                                        <span class="skill-name">React </span>
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 60%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="skill-item">
-                                        <span class="skill-name">React Native </span>
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 30%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="skill-category">
-                                <h4>Other Skills</h4>
-                                <div class="skill-tags">
-                                    <span>Game Design</span>
-                                    <span>Problem Solving</span>
-                                    <span>Marketing</span>
-                                    <span>Mechanic Design</span>
-                                    <span>UI/UX</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="stat" data-reveal data-delay="3">
+                        <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label" data-tr="tamamlanan proje" data-en="projects done">projects done</span>
+                    </div>
+                </div>
+                <div class="skills-wrap" data-reveal data-delay="4">
+                    <span class="section-eyebrow" style="margin-bottom:1rem;display:block;" data-tr="teknik beceriler"
+                        data-en="technical skills">technical skills</span>
+                    <div class="skill-chips">
+                        <span class="chip chip--primary">Unity</span>
+                        <span class="chip chip--primary">C#</span>
+                        <span class="chip">React Native</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip" data-tr="Oynanış Programlama" data-en="Gameplay Programming">Gameplay
+                            Programming</span>
+                        <span class="chip" data-tr="Yapay Zeka Sistemleri" data-en="AI Systems">AI Systems</span>
+                        <span class="chip">Optimization</span>
+                        <span class="chip" data-tr="Mobil Geliştirme" data-en="Mobile Development">Mobile
+                            Development</span>
+                        <span class="chip">UI/UX</span>
+                        <span class="chip" data-tr="Ürün Düşüncesi" data-en="Product Thinking">Product Thinking</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
-
-
-
-
-
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-header">
-                <h2>Get In Touch</h2>
-                <div class="section-line"></div>
-                <p class="contact-subtitle">Let's create something amazing together!</p>
+        <div class="contact-inner">
+            <p class="section-eyebrow contact-eyebrow" data-reveal data-tr="iletişime geç" data-en="get in touch">
+                get in touch</p>
+            <h2 class="contact-heading" data-reveal data-delay="1">
+                <span data-tr="Birlikte bir" data-en="Let's build">Let's build</span><br>
+                <em data-tr="şey yapalım mı?" data-en="something great.">something great.</em>
+            </h2>
+            <a href="mailto:erensirli02@gmail.com" class="contact-email" data-reveal
+                data-delay="2">erensirli02@gmail.com</a>
+            <div class="contact-links" data-reveal data-delay="3">
+                <a href="https://www.linkedin.com/in/eren-sirli/" target="_blank" class="contact-link-item">LinkedIn</a>
+                <span class="contact-divider">·</span>
+                <a href="https://github.com/sirlieren" target="_blank" class="contact-link-item">GitHub</a>
             </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="card-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p>erensirli02@gmail.com</p>
-                        <a href="mailto:erensirli02@gmail.com" class="contact-link">Send
-                            Email</a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="card-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <h3>LinkedIn</h3>
-                        <p>linkedin.com/in/eren-sirli</p>
-                        <a href="https://www.linkedin.com/in/eren-sirli/" target="_blank"
-                            class="contact-link">Connect</a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="card-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p>github.com/sirlieren</p>
-                        <a href="https://github.com/sirlieren" target="_blank" class="contact-link">Follow</a>
-                    </div>
-                </div>
-
-                <div class="contact-availability">
-                    <div class="availability-card">
-                        <div class="availability-header">
-                            <i class="fas fa-clock"></i>
-                            <h3>Availability</h3>
-                        </div>
-                        <p>I am open to internship and full-time job opportunities.</p>
-                        <p>Available for game development projects.</p>
-                        <div class="availability-status">
-                            <span class="status-dot"></span>
-                            <span class="status-text">Currently Available</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="contact-footer" data-reveal data-delay="4">
+            <span>© 2026 Eren Sırlı</span>
+            <span></span>
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/projects.js"></script>
 </body>
 
 </html>

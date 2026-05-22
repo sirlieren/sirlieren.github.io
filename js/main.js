@@ -1,145 +1,118 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+/* main.js — Eren Sırlı Portfolio */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll effect (class-based for cleaner styling)
-    const navbar = document.querySelector('.navbar');
-    const handleScroll = () => {
-        const offset = window.scrollY || window.pageYOffset;
-        if (offset > 24) {
-            navbar.classList.add('navbar-scrolled');
+(function () {
+    'use strict';
+
+    /* ── Navbar scroll effect ─────────────────────── */
+    const navbar = document.getElementById('navbar');
+
+    const onScroll = () => {
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.classList.remove('navbar-scrolled');
+            navbar.classList.remove('scrolled');
         }
     };
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-    // Mobile menu toggle
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
+    /* ── Active nav link ──────────────────────────── */
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sections = Array.from(navLinks)
+        .map(a => document.querySelector(a.getAttribute('href')))
+        .filter(Boolean);
 
-    if (burger && nav) {
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('nav-active');
-            burger.classList.toggle('toggle');
+    const setActive = () => {
+        const y = window.scrollY + window.innerHeight * 0.35;
+        let active = null;
+        sections.forEach(s => {
+            if (s.offsetTop <= y) active = s.id;
         });
-    }
-
-    // Projects slider logic
-    const projectsTrack = document.querySelector('.projects-track');
-    const scrollLeftBtn = document.querySelector('.scroll-left');
-    const scrollRightBtn = document.querySelector('.scroll-right');
-    let currentPosition = 0;
-
-    // Calculate how many cards are visible at once
-    const cardWidth = 350; // width of one card
-    const cardGap = 32; // 2rem gap
-    const cardTotal = cardWidth + cardGap;
-
-    if (projectsTrack && scrollLeftBtn && scrollRightBtn) {
-        // Initially hide left scroll button
-        scrollLeftBtn.style.opacity = '0.3';
-
-        // Function to update scroll buttons visibility
-        const updateScrollButtons = () => {
-            // Hide left button if at the start
-            scrollLeftBtn.style.opacity = currentPosition === 0 ? '0.3' : '1';
-
-            // Hide right button if at the end
-            const maxScroll = projectsTrack.children.length * cardTotal - projectsTrack.parentElement.offsetWidth;
-            scrollRightBtn.style.opacity = currentPosition >= maxScroll ? '0.3' : '1';
-        };
-
-        // Scroll right
-        scrollRightBtn.addEventListener('click', () => {
-            const maxScroll = projectsTrack.children.length * cardTotal - projectsTrack.parentElement.offsetWidth;
-            currentPosition = Math.min(currentPosition + cardTotal, maxScroll);
-            projectsTrack.style.transform = `translateX(-${currentPosition}px)`;
-            updateScrollButtons();
+        navLinks.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + active);
         });
+    };
 
-        // Scroll left
-        scrollLeftBtn.addEventListener('click', () => {
-            currentPosition = Math.max(currentPosition - cardTotal, 0);
-            projectsTrack.style.transform = `translateX(-${currentPosition}px)`;
-            updateScrollButtons();
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+
+    /* ── Smooth scroll for all anchor links ──────── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+
+            // Close mobile menu if open
+            const mm = document.getElementById('mobileMenu');
+            const burger = document.querySelector('.burger');
+            if (mm.classList.contains('open')) {
+                mm.classList.remove('open');
+                burger.classList.remove('open');
+                burger.setAttribute('aria-expanded', 'false');
+            }
         });
-
-        // Update buttons on window resize
-        window.addEventListener('resize', updateScrollButtons);
-
-        // Initial button state
-        updateScrollButtons();
-    }
-
-    // Reveal-on-scroll animations
-    const revealElements = document.querySelectorAll('.section-header, .project-card, .about-content, .contact-card, .availability-card');
-    const revealClass = 'reveal-on-scroll';
-    const visibleClass = 'is-visible';
-
-    revealElements.forEach((el, index) => {
-        el.classList.add(revealClass);
-        // Subtle stagger based on index
-        el.style.transitionDelay = `${80 + index * 40}ms`;
     });
 
-    const observer = new IntersectionObserver(
+    /* ── Mobile burger ────────────────────────────── */
+    const burger = document.querySelector('.burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (burger && mobileMenu) {
+        burger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            burger.classList.toggle('open', isOpen);
+            burger.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
+
+    /* ── Reveal on scroll ─────────────────────────── */
+    const revealEls = document.querySelectorAll('[data-reveal]');
+
+    const revealObserver = new IntersectionObserver(
         entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add(visibleClass);
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
                 }
             });
         },
-        {
-            threshold: 0.18
-        }
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
 
-    revealElements.forEach(el => observer.observe(el));
+    revealEls.forEach(el => revealObserver.observe(el));
 
-    // Active section indicator
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    const sections = Array.from(navLinks)
-        .map(link => document.querySelector(link.getAttribute('href')))
-        .filter(Boolean);
+    /* ── Animated number counter ─────────────────── */
+    const counters = document.querySelectorAll('[data-count]');
 
-    const setActiveLink = () => {
-        const scrollPos = window.scrollY || window.pageYOffset;
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-        const offsetForHighlight = viewportHeight * 0.25;
+    const countObserver = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-count'), 10);
+                const duration = 1200;
+                const startTime = performance.now();
 
-        let activeId = null;
+                const tick = (now) => {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                    el.textContent = Math.round(eased * target);
+                    if (progress < 1) requestAnimationFrame(tick);
+                };
 
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            const sectionTop = rect.top + scrollPos - offsetForHighlight;
-            const sectionBottom = sectionTop + section.offsetHeight;
+                requestAnimationFrame(tick);
+                countObserver.unobserve(el);
+            });
+        },
+        { threshold: 0.5 }
+    );
 
-            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                activeId = `#${section.id}`;
-            }
-        });
+    counters.forEach(el => countObserver.observe(el));
 
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === activeId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    };
+})();
 
-    setActiveLink();
-    window.addEventListener('scroll', setActiveLink, { passive: true });
-});
