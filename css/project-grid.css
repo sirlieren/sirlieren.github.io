@@ -1,0 +1,5 @@
+@media (min-width: 901px) {
+    .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .project-card:first-child { grid-column: auto; }
+    .project-card:first-child .card-image { aspect-ratio: 16 / 10; }
+}

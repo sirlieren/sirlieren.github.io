@@ -1,266 +1,225 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eren Sırlı — Game Developer</title>
+    <meta name="description"
+        content="Eren Sırlı is a programming-focused Unity game developer who builds games end-to-end, from gameplay systems and UI to art, audio and release.">
+    <meta name="theme-color" content="#F8F8F5">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Eren Sırlı — Unity Game Developer">
+    <meta property="og:description"
+        content="Programming-focused Unity developer. Solo developer of Bug Bane, The Pandemic Papers, and Counter Smash; co-developer of Foes of Legacy.">
+    <meta property="og:url" content="https://sirlieren.github.io/">
+    <meta property="og:image" content="https://sirlieren.github.io/assets/images/project1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://sirlieren.github.io/">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23111111'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='42' fill='%23F8F8F5'%3EE%3C/text%3E%3C/svg%3E">
+    <title>Eren Sırlı — Unity Game Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=00812410">
+    <link rel="stylesheet" href="css/project-grid.css">
+    <link rel="stylesheet" href="css/motion.css?v=1b793032">
 </head>
 
 <body>
-
-    <!-- NAV -->
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Primary navigation">
         <div class="nav-inner">
-            <a href="#home" class="nav-logo">eren sırlı</a>
+            <a href="#home" class="nav-logo" aria-label="Eren Sırlı, home">eren sırlı</a>
             <ul class="nav-links">
-                <li><a href="#home" data-tr="ana sayfa" data-en="home">home</a></li>
-                <li><a href="#projects" data-tr="projeler" data-en="projects">projects</a></li>
-                <li><a href="#about" data-tr="hakkımda" data-en="about">about me</a></li>
-                <li><a href="#contact" data-tr="iletişim" data-en="contact">contact</a></li>
+                <li><a href="#home">home</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#contact">contact</a></li>
             </ul>
             <a href="#contact" class="nav-pill">
-                <span class="pill-dot"></span>
-                <span data-tr="müsaitim" data-en="available">available </span>
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span>open to game dev roles</span>
             </a>
 
-            <button class="burger" aria-label="Menü" aria-expanded="false">
+            <button class="burger" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="mobileMenu">
                 <span></span><span></span>
             </button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
-            <a href="#home" data-tr="ana sayfa" data-en="home">home</a>
-            <a href="#projects" data-tr="projeler" data-en="projects">projects</a>
-            <a href="#about" data-tr="hakkımda" data-en="about">about me</a>
-            <a href="#contact" data-tr="iletişim" data-en="contact">contact</a>
+            <a href="#home">home</a>
+            <a href="#projects">projects</a>
+            <a href="#about">about</a>
+            <a href="#contact">contact</a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <p class="hero-eyebrow" data-tr="oyun geliştirici · yazılım mühendisi · yaratıcı"
-                data-en="game developer · software engineer · creator">game developer · software developer
-            </p>
-            <h1 class="hero-name" data-reveal data-delay="1">Eren<br>Sırlı.</h1>
-            <p class="hero-sub" data-reveal data-delay="2" data-tr="5 yıldır Unity ile oyunlar yapıyorum."
-                data-en="Building games with Unity for 5 years.">Building games with Unity for 5 years</p>
-            <a href="#projects" class="cta" data-reveal data-delay="3">
-                <span data-tr="Çalışmalarımı gör" data-en="View my work">View my work</span>
-                <span class="cta-arrow">→</span>
-            </a>
-        </div>
-        <div class="hero-scroll" data-reveal data-delay="4">
-            <span class="scroll-line"></span>
-            <span class="scroll-label">scroll</span>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Unity game developer · programming-focused</p>
+                <h1 class="hero-name">Eren<br>Sırlı.</h1>
+                <p class="hero-sub">
+                    I build games end-to-end, with C# and gameplay programming at the core.
+                    Solo developer of Bug Bane, The Pandemic Papers, and Counter Smash; co-developer of Foes of Legacy.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="cta">
+                        <span>View game projects</span>
+                        <span class="cta-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="assets/images/01ErenSirliResumeGD.pdf" target="_blank" rel="noopener noreferrer"
+                        class="text-link">
+                        Game Dev CV <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <ul class="hero-proof" aria-label="Career highlights">
+                    <li><strong>2</strong><span>Steam releases</span></li>
+                    <li><strong>5+</strong><span>years with Unity</span></li>
+                    <li><strong>end-to-end</strong><span>independent production</span></li>
+                </ul>
+            </div>
+            <div class="hero-scroll" aria-hidden="true">
+                <span class="scroll-line"></span>
+                <span class="scroll-label">scroll</span>
+            </div>
+        </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <div class="section-header" data-reveal>
-            <span class="section-eyebrow" data-tr="seçili işler" data-en="selected work">featured projects</span>
-            <h2>
-                <span data-tr="Seçili" data-en="Selected">featured</span><br>
-                <em data-tr="İşler." data-en="Work.">projects.</em>
-            </h2>
-        </div>
+        <section id="projects" class="projects">
+            <div class="section-header" data-reveal>
+                <span class="section-eyebrow">selected game work</span>
+                <h2>Games I brought<br><em>to life.</em></h2>
+                <p class="section-intro">
+                    Released games, a mobile game-feel prototype, and a university project in progress. Open a case study to see my role, implementation focus, and the work itself.
+                </p>
+            </div>
 
-        <div class="projects-grid">
+            <div class="projects-grid">
+                <article class="project-card" data-reveal>
+                    <a href="projects/bug-bane.html" class="card-link" aria-label="Read the Bug Bane Survivors case study">
+                        <div class="card-image"><img src="assets/images/project1.png" alt="Bug Bane Survivors gameplay artwork"><div class="card-overlay" aria-hidden="true"><span class="overlay-link">Read case study <span>→</span></span></div></div>
+                        <div class="card-info"><div class="card-topline"><span class="card-status">Steam Early Access</span><span class="card-role">Solo Developer</span></div><h3>Bug Bane Survivors</h3><p class="card-description">A humorous action roguelike with lively combat animation and a focus on punchy game feel. Solo developed from gameplay to release.</p><div class="card-actions"><span>Unity</span><span>C#</span><span>Action Roguelike</span><strong>Read case study →</strong></div></div>
+                    </a>
+                </article>
+                <article class="project-card" data-reveal data-delay="1">
+                    <a href="projects/foes-of-legacy.html" class="card-link" aria-label="Read the Foes of Legacy Survivors case study">
+                        <div class="card-image"><img src="assets/images/project4.png" alt="Foes of Legacy Survivors gameplay artwork" loading="lazy"><div class="card-overlay" aria-hidden="true"><span class="overlay-link">Read case study <span>→</span></span></div></div>
+                        <div class="card-info"><div class="card-topline"><span class="card-status">Steam Early Access</span><span class="card-role">Co-Developer · 2-person team</span></div><h3>Foes of Legacy: Survivors</h3><p class="card-description">A two-person team project featuring my work on player abilities, enemy AI, UI, optimization and selected game assets.</p><div class="card-actions"><span>Unity</span><span>C#</span><span>2D Roguelike</span><strong>Read case study →</strong></div></div>
+                    </a>
+                </article>
+                <article class="project-card" data-reveal data-delay="2">
+                    <a href="projects/counter-smash.html" class="card-link" aria-label="Read the Counter Smash case study">
+                        <div class="card-image"><img src="assets/images/counter-smash/ss2.png" alt="Counter Smash perfect shot triggering an explosive hit" loading="lazy"><div class="card-overlay" aria-hidden="true"><span class="overlay-link">Read case study <span>→</span></span></div></div>
+                        <div class="card-info"><div class="card-topline"><span class="card-status card-status--wip">Portfolio Prototype</span><span class="card-role">Solo Developer</span></div><h3>Counter Smash</h3><p class="card-description">A mobile physics prototype focused on game feel: a looping charge meter, risky explosive-shot timing, and tactile brick destruction.</p><div class="card-actions"><span>Unity 6</span><span>C#</span><span>Game Feel</span><strong>Read case study →</strong></div></div>
+                    </a>
+                </article>
+                <article class="project-card project-card--wip" data-reveal data-delay="3">
+                    <a href="projects/pandemic-papers.html" class="card-link" aria-label="Read The Pandemic Papers case study">
+                        <div class="card-image"><img src="assets/images/pandemicpapers.jpg" alt="The Pandemic Papers game artwork" loading="lazy"><div class="card-overlay card-overlay--wip" aria-hidden="true"><span class="wip-badge">In Development</span></div></div>
+                        <div class="card-info"><div class="card-topline"><span class="card-status card-status--wip">In Development · Awarded</span><span class="card-role">Solo Developer</span></div><h3>The Pandemic Papers</h3><p class="card-description">A 2D simulation built around document handling and verification, complex UI state management, and custom physics. Awarded second place at the university graduation project presentation.</p><div class="card-actions"><span>Unity</span><span>C#</span><span>Simulation</span><strong>Read case study →</strong></div></div>
+                    </a>
+                </article>
+            </div>
+        </section>
 
-            <article class="project-card" data-reveal>
-                <a href="https://store.steampowered.com/app/3830770/Bug_Bane_Survivors/" target="_blank"
-                    class="card-link">
-                    <div class="card-image">
-                        <img src="assets/images/project1.png" alt="Bug Bane Survivors">
-                        <div class="card-overlay">
-                            <span class="overlay-link">
-                                <span data-tr="Steam'de gör" data-en="View on Steam">View on Steam</span>
-                                <span>↗</span>
-                            </span>
+        <section id="about" class="about">
+            <div class="about-inner">
+                <div class="about-left" data-reveal>
+                    <span class="section-eyebrow">about me</span>
+                    <h2>Code first,<br><em>hands-on everywhere.</em></h2>
+                    <p class="about-bio">
+                        I am a Unity game developer focused on C#, gameplay programming and building systems that turn
+                        ideas into complete, playable games.
+                    </p>
+                    <p class="about-bio">
+                        My experience comes from owning independent projects end-to-end. Programming is my core craft,
+                        but I also step into game design, UI, Blender, Photoshop and SFX whenever the game needs it.
+                    </p>
+                    <a href="assets/images/01ErenSirliResumeGD.pdf" target="_blank" rel="noopener noreferrer"
+                        class="cta cta--outline">
+                        <span>View Game Dev CV</span>
+                        <span class="cta-arrow" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <div class="about-right">
+                    <div class="about-photo-wrap" data-reveal data-delay="1">
+                        <img src="assets/images/profile.jpg" alt="Portrait of Eren Sırlı" loading="lazy"
+                            decoding="async">
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat" data-reveal data-delay="2">
+                            <span><span class="stat-number" data-count="2">2</span><span class="stat-plus">×</span></span>
+                            <span class="stat-label">Steam releases</span>
+                        </div>
+                        <div class="stat" data-reveal data-delay="3">
+                            <span><span class="stat-number" data-count="5">5</span><span class="stat-plus">+</span></span>
+                            <span class="stat-label">years with Unity</span>
                         </div>
                     </div>
-                    <div class="card-info">
-                        <h3>Bug Bane</h3>
-                        <p>Roguelike · Unity · Steam</p>
-                    </div>
-                </a>
-            </article>
-
-            <article class="project-card" data-reveal data-delay="1">
-                <a href="https://store.steampowered.com/app/3976130/Foes_of_Legacy_Survivors/" target="_blank"
-                    class="card-link">
-                    <div class="card-image">
-                        <img src="assets/images/project4.png" alt="Foes of Legacy">
-                        <div class="card-overlay">
-                            <span class="overlay-link">
-                                <span data-tr="Steam'de gör" data-en="View on Steam">View on Steam</span>
-                                <span>↗</span>
-                            </span>
+                    <div class="skills-wrap" data-reveal data-delay="4">
+                        <div class="skill-group">
+                            <span class="section-eyebrow">core development</span>
+                            <div class="skill-chips">
+                                <span class="chip chip--primary">Unity</span>
+                                <span class="chip chip--primary">C#</span>
+                                <span class="chip chip--primary">Gameplay Programming</span>
+                                <span class="chip">Game Systems</span>
+                                <span class="chip">AI Behaviors</span>
+                                <span class="chip">Optimization</span>
+                                <span class="chip">Git</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>Foes of Legacy</h3>
-                        <p>Survivors · Unity · Steam</p>
-                    </div>
-                </a>
-            </article>
-
-            <article class="project-card" data-reveal data-delay="2">
-                <a href="https://www.youtube.com/@blank-GD" target="_blank" class="card-link">
-                    <div class="card-image">
-                        <img src="assets/images/project3.jpg" alt="Blank 99">
-                        <div class="card-overlay">
-                            <span class="overlay-link">
-                                <span data-tr="YouTube'da gör" data-en="View on YouTube">View on YouTube</span>
-                                <span>↗</span>
-                            </span>
+                        <div class="skill-group">
+                            <span class="section-eyebrow">production toolkit</span>
+                            <div class="skill-chips">
+                                <span class="chip">Game Design</span>
+                                <span class="chip">UI Implementation</span>
+                                <span class="chip">Blender</span>
+                                <span class="chip">Photoshop</span>
+                                <span class="chip">SFX Production</span>
+                                <span class="chip">Steam Publishing</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>Blank 99</h3>
-                        <p>YouTube</p>
-                    </div>
-                </a>
-            </article>
-
-            <article class="project-card project-card--wip" data-reveal data-delay="3">
-                <div class="card-link">
-                    <div class="card-image">
-                        <img src="assets/images/pandemicPapers.jpg" alt="The Pandemic Papers">
-                        <div class="card-overlay card-overlay--wip">
-                            <span class="wip-badge" data-tr="Geliştiriliyor" data-en="In Development">In
-                                Development</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>The Pandemic Papers</h3>
-                        <p data-tr="Hikâye Oyunu · Unity" data-en="Simulation · Chill · Unity">Simulation · Chill ·
-                            Unity</p>
                     </div>
                 </div>
-            </article>
+            </div>
+        </section>
 
-            <article class="project-card project-card--wip" data-reveal data-delay="4">
-                <div class="card-link">
-                    <div class="card-image">
-                        <img src="assets/images/scout.png" alt="Influencer Data Scraper">
-                        <div class="card-overlay card-overlay--wip">
-                            <span class="wip-badge" data-tr="Geliştiriliyor" data-en="In Development">In
-                                Development</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <h3>Scout - Influencer Data Scraper</h3>
-                        <p data-tr="Influencer Analitik Aracı · React Native"
-                            data-en="Influencer Analytics Tool · React Native">Influencer Analytics Tool · JavaScript ·
-                            HTML/CSS · Axios · REST APIs
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <div class="about-inner">
-            <div class="about-left" data-reveal>
-                <span class="section-eyebrow" data-tr="hakkımda" data-en="about me">about me</span>
-                <h2>
-                    <span data-tr="Oyun geliştirici," data-en="Game dev,">DEV,</span><br>
-                    <em data-tr="içten dışa." data-en="inside &amp; out.">inside out.</em>
+        <section id="contact" class="contact">
+            <div class="contact-inner">
+                <p class="section-eyebrow contact-eyebrow" data-reveal>get in touch</p>
+                <h2 class="contact-heading" data-reveal data-delay="1">
+                    <span>Let's ship the</span><br><em>next game.</em>
                 </h2>
-                <p class="about-bio"
-                    data-tr="Yaklaşık 5 yıldır Unity ile oyunlar ve interaktif sistemler geliştiriyorum. Gameplay programming, AI behaviors, procedural systems ve optimization konularında deneyim sahibiyim."
-                    data-en="I've been building games and interactive systems with Unity for about 5 years. I have experience in gameplay programming, AI behaviors, procedural systems, and optimization.">
-                    I've been building games and interactive systems with Unity for about 5 years. I have experience in
-                    gameplay programming, AI behaviors, procedural systems, and optimization.
+                <p class="contact-intro" data-reveal data-delay="2">
+                    Looking for a Unity developer who can own the code and stay involved across production?
+                    I am open to game development roles and collaborations.
                 </p>
-                <p class="about-bio"
-                    data-tr="Son dönemde mobil uygulama geliştirme ve yazılım ürünleri üzerine yoğunlaşıyorum. Kullanıcı deneyimi ve performans odaklı çözümler üretiyorum. Pazarlama ve ürün görünürlüğünü teknik geliştirme kadar önemli görüyorum."
-                    data-en="Lately I've been focusing on mobile app development and software products. I build solutions centered around user experience and performance. I consider marketing and product visibility just as important as technical development.">
-                    Lately I've been focusing on mobile app development and software products. I build solutions
-                    centered around user experience and performance. I consider marketing and product visibility just as
-                    important as technical development.
-                </p>
-                <a href="assets/images/01ErenSirliResumeGD.pdf" target="_blank" class="cta cta--outline">
-                    <span data-tr="CV'yi gör" data-en="View CV">View Game Dev. CV</span>
-                    <span class="cta-arrow">↗</span>
-                </a>
-                <a href="assets/images/01ErenSirliResumeSD.pdf" target="_blank" class="cta cta--outline">
-                    <span data-tr="CV'yi gör" data-en="View CV">View Software CV</span>
-                    <span class="cta-arrow">↗</span>
-                </a>
-            </div>
-
-            <div class="about-right">
-                <div class="about-photo-wrap" data-reveal data-delay="1">
-                    <img src="assets/images/profile.jpg" alt="Eren Sırlı">
-                </div>
-                <div class="about-stats">
-                    <div class="stat" data-reveal data-delay="2">
-                        <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label" data-tr="yıl deneyim" data-en="years exp.">years exp.</span>
-                    </div>
-                    <div class="stat" data-reveal data-delay="3">
-                        <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label" data-tr="tamamlanan proje" data-en="projects done">projects done</span>
-                    </div>
-                </div>
-                <div class="skills-wrap" data-reveal data-delay="4">
-                    <span class="section-eyebrow" style="margin-bottom:1rem;display:block;" data-tr="teknik beceriler"
-                        data-en="technical skills">technical skills</span>
-                    <div class="skill-chips">
-                        <span class="chip chip--primary">Unity</span>
-                        <span class="chip chip--primary">C#</span>
-                        <span class="chip">React Native</span>
-                        <span class="chip">JavaScript</span>
-                        <span class="chip" data-tr="Oynanış Programlama" data-en="Gameplay Programming">Gameplay
-                            Programming</span>
-                        <span class="chip" data-tr="Yapay Zeka Sistemleri" data-en="AI Systems">AI Systems</span>
-                        <span class="chip">Optimization</span>
-                        <span class="chip" data-tr="Mobil Geliştirme" data-en="Mobile Development">Mobile
-                            Development</span>
-                        <span class="chip">UI/UX</span>
-                        <span class="chip" data-tr="Ürün Düşüncesi" data-en="Product Thinking">Product Thinking</span>
-                    </div>
+                <a href="mailto:erensirli02@gmail.com" class="contact-email" data-reveal
+                    data-delay="2">erensirli02@gmail.com</a>
+                <div class="contact-links" data-reveal data-delay="3">
+                    <a href="https://www.linkedin.com/in/eren-sirli/" target="_blank" rel="noopener noreferrer"
+                        class="contact-link-item">LinkedIn</a>
+                    <span class="contact-divider">·</span>
+                    <a href="https://github.com/sirlieren" target="_blank" rel="noopener noreferrer"
+                        class="contact-link-item">GitHub</a>
+                    <span class="contact-divider">·</span>
+                    <a href="https://www.youtube.com/@blank-GD" target="_blank" rel="noopener noreferrer"
+                        class="contact-link-item">YouTube</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-        <div class="contact-inner">
-            <p class="section-eyebrow contact-eyebrow" data-reveal data-tr="iletişime geç" data-en="get in touch">
-                get in touch</p>
-            <h2 class="contact-heading" data-reveal data-delay="1">
-                <span data-tr="Birlikte bir" data-en="Let's build">Let's build</span><br>
-                <em data-tr="şey yapalım mı?" data-en="something great.">something great.</em>
-            </h2>
-            <a href="mailto:erensirli02@gmail.com" class="contact-email" data-reveal
-                data-delay="2">erensirli02@gmail.com</a>
-            <div class="contact-links" data-reveal data-delay="3">
-                <a href="https://www.linkedin.com/in/eren-sirli/" target="_blank" class="contact-link-item">LinkedIn</a>
-                <span class="contact-divider">·</span>
-                <a href="https://github.com/sirlieren" target="_blank" class="contact-link-item">GitHub</a>
+            <div class="contact-footer" data-reveal data-delay="4">
+                <span>© 2026 Eren Sırlı</span>
+                <span>Unity game developer</span>
             </div>
-        </div>
-        <div class="contact-footer" data-reveal data-delay="4">
-            <span>© 2026 Eren Sırlı</span>
-            <span></span>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <script src="js/main.js"></script>
+    <script src="js/motion.js?v=b4913215"></script>
+    <script src="js/main.js?v=22fa3ac5"></script>
 </body>
 
 </html>

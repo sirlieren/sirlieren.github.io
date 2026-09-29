@@ -1,0 +1,39 @@
+.project-main{padding-top:var(--nav-h)}
+.case-hero,.case-section,.case-footer{width:min(1200px,100%);margin:0 auto;padding-left:2rem;padding-right:2rem}
+.case-hero{padding-top:3.5rem;padding-bottom:5rem}
+.case-back{display:inline-flex;gap:.6rem;margin-bottom:2.5rem;color:var(--gray-1);font-family:var(--mono);font-size:11px;letter-spacing:.04em;transition:color .2s}
+.case-back:hover{color:var(--black)}
+.case-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+.case-eyebrow{display:block;margin-bottom:1rem;color:var(--gray-1);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.case-title{max-width:760px;margin-bottom:1.2rem;font-family:var(--serif);font-size:clamp(3.4rem,7vw,6rem);font-weight:400;letter-spacing:-.04em;line-height:.98}
+.case-lede{max-width:620px;color:var(--gray-1);font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:300;line-height:1.7}
+.case-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 2rem;max-width:610px;margin:2rem 0;padding:1.3rem 0;border-top:1px solid var(--gray-2);border-bottom:1px solid var(--gray-2)}
+.case-fact{display:flex;flex-direction:column;gap:.35rem;color:var(--black);font-size:14px;font-weight:400}
+.case-fact span{color:var(--gray-1);font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase}
+.case-actions{display:flex;align-items:center;flex-wrap:wrap;gap:1rem 1.5rem}
+.case-cover,.case-video{position:relative;display:block;overflow:hidden;background:var(--gray-3)}
+.case-cover{aspect-ratio:16/10;border:1px solid var(--gray-2)}
+.case-cover img{object-fit:cover}
+.case-cover--portrait{width:min(100%,390px);max-height:min(72vh,680px);margin:0 auto;aspect-ratio:9/16;background:#151515}
+.case-cover--portrait img{object-fit:contain}
+.case-video{max-width:560px;border:1px solid var(--gray-2)}
+.case-video img{aspect-ratio:16/9;transition:transform .45s var(--ease)}
+.case-video:hover img{transform:scale(1.025)}
+.case-play{position:absolute;inset:0;display:grid;place-items:center;color:white;font-size:2rem;text-shadow:0 2px 18px #000b}
+.case-video-caption{display:block;margin-top:.65rem;color:var(--gray-1);font-family:var(--mono);font-size:10px;letter-spacing:.04em}
+.case-section{padding-top:3rem;padding-bottom:3.5rem;border-top:1px solid var(--gray-2)}
+.case-section-grid{display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,1.35fr);gap:3rem}
+.case-section h2{margin-bottom:1rem;font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.1}
+.case-copy{max-width:760px;color:var(--gray-1);font-size:15px;line-height:1.8}
+.case-copy p+p{margin-top:1rem}
+.case-list{display:grid;gap:1rem;color:var(--gray-1);font-size:15px;line-height:1.75}
+.case-list li{position:relative;padding-left:1.15rem}
+.case-list li::before{content:'';position:absolute;top:.7em;left:0;width:5px;height:5px;border-radius:50%;background:var(--black)}
+.case-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin-top:2rem}
+.case-gallery figure{overflow:hidden;border:1px solid var(--gray-2);background:var(--gray-3)}
+.case-gallery img{aspect-ratio:9/16;object-fit:cover}
+.case-gallery figcaption{padding:.7rem;color:var(--gray-1);font-family:var(--mono);font-size:9px;line-height:1.5}
+.case-footer{display:flex;justify-content:space-between;gap:1rem;padding-top:1.5rem;padding-bottom:2rem;color:var(--gray-1);font-family:var(--mono);font-size:10px}
+@media(max-width:900px){.case-hero-grid{grid-template-columns:1fr;gap:2.5rem}.case-hero-copy{order:1}.case-hero-media{order:2;max-width:680px}.case-cover--portrait{width:min(100%,360px)}.case-section-grid{grid-template-columns:1fr;gap:1rem}}
+@media(max-width:600px){.case-hero,.case-section,.case-footer{padding-left:1.5rem;padding-right:1.5rem}.case-hero{padding-top:2.25rem;padding-bottom:3rem}.case-back{margin-bottom:2rem}.case-facts{gap:1rem}.case-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.case-footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.case-video img{transition:none}}

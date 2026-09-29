@@ -4,13 +4,13 @@
 :root {
     --white: #F8F8F5;
     --black: #111111;
-    --gray-1: #888780;
+    --gray-1: #66645D;
     --gray-2: #D3D1C7;
     --gray-3: #EBEBEA;
     --accent: #378ADD;
     --dark-bg: #111111;
     --dark-text: #F8F8F5;
-    --dark-muted: rgba(248, 248, 245, 0.5);
+    --dark-muted: rgba(248, 248, 245, 0.72);
     --serif: 'DM Serif Display', Georgia, serif;
     --sans: 'DM Sans', system-ui, sans-serif;
     --mono: 'JetBrains Mono', monospace;
@@ -65,6 +65,11 @@ button {
     border: none;
     cursor: pointer;
     font-family: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
 }
 
 /* =========================================
@@ -311,8 +316,51 @@ button {
     font-weight: 300;
     color: var(--gray-1);
     line-height: 1.6;
-    max-width: 420px;
-    margin-bottom: 3rem;
+    max-width: 660px;
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.text-link {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 3px;
+}
+
+.hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3.5rem;
+}
+
+.hero-proof li {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hero-proof strong {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.hero-proof span {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--gray-1);
 }
 
 /* CTA button */
@@ -434,6 +482,13 @@ button {
     color: var(--gray-1);
 }
 
+.section-intro {
+    max-width: 560px;
+    color: var(--gray-1);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
 /* =========================================
    PROJECTS
    ========================================= */
@@ -528,7 +583,7 @@ button {
 }
 
 .card-info {
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem;
     background: var(--white);
     border-top: 1px solid var(--gray-2);
 }
@@ -538,15 +593,63 @@ button {
     font-size: 20px;
     font-weight: 400;
     color: var(--black);
-    margin-bottom: 2px;
+    margin-bottom: 0.65rem;
 }
 
-.card-info p {
+.card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 0.9rem;
+}
+
+.card-status,
+.card-role {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.06em;
+    font-weight: 500;
+}
+
+.card-status {
+    color: #27500A;
+}
+
+.card-status--wip,
+.card-role {
     color: var(--gray-1);
-    font-weight: 400;
+}
+
+.card-description {
+    color: var(--gray-1);
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 720px;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--gray-1);
+}
+
+.card-actions span {
+    border: 1px solid var(--gray-2);
+    padding: 5px 8px;
+}
+
+.card-actions strong {
+    color: var(--black);
+    font-weight: 500;
+    margin-left: auto;
 }
 
 .project-card--wip .card-info h3 {
@@ -679,6 +782,15 @@ button {
 
 .skills-wrap {
     background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .skill-chips {
@@ -760,6 +872,14 @@ button {
     position: relative;
     margin-bottom: 2.5rem;
     letter-spacing: -0.01em;
+}
+
+.contact-intro {
+    max-width: 660px;
+    color: var(--dark-muted);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: -1.5rem 0 3rem;
 }
 
 .contact-email::after {
@@ -869,6 +989,25 @@ button {
         padding: calc(var(--nav-h) + 2.5rem) 1.5rem 3rem;
     }
 
+    .hero-name {
+        font-size: clamp(64px, 24vw, 92px);
+    }
+
+    .hero-sub {
+        font-size: 16px;
+    }
+
+    .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .hero-proof {
+        gap: 1.5rem;
+        margin-top: 2.75rem;
+    }
+
     .hero-scroll {
         display: none;
     }
@@ -880,6 +1019,17 @@ button {
     .projects-grid {
         padding: 0;
         gap: 1px;
+    }
+
+    .card-topline {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .card-actions strong {
+        width: 100%;
+        margin: 0.25rem 0 0;
+        font-size: 12px;
     }
 
     .about-inner {
@@ -894,5 +1044,30 @@ button {
         flex-direction: column;
         gap: 8px;
         text-align: center;
+    }
+}
+
+@media (hover: none) {
+    .card-overlay:not(.card-overlay--wip) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:not(.motion-override) {
+        scroll-behavior: auto;
+    }
+
+    html:not(.motion-override) *,
+    html:not(.motion-override) *::before,
+    html:not(.motion-override) *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html:not(.motion-override) [data-reveal] {
+        opacity: 1;
+        transform: none;
     }
 }

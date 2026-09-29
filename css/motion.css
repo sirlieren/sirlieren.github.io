@@ -1,0 +1,88 @@
+/* A restrained motion layer shared by the portfolio and its case studies. */
+:root { --motion-ease: cubic-bezier(.22,1,.36,1); }
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+/* Content stays readable when JavaScript is unavailable. */
+[data-reveal] { opacity: 1; transform: none; }
+.motion-ready [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 650ms var(--motion-ease), transform 650ms var(--motion-ease);
+}
+.motion-ready [data-reveal].visible { opacity: 1; transform: none; }
+.motion-ready [data-reveal][data-delay="1"] { transition-delay: 70ms; }
+.motion-ready [data-reveal][data-delay="2"] { transition-delay: 140ms; }
+.motion-ready [data-reveal][data-delay="3"] { transition-delay: 210ms; }
+.motion-ready [data-reveal][data-delay="4"] { transition-delay: 280ms; }
+.motion-ready [data-reveal][data-delay="5"] { transition-delay: 350ms; }
+
+.cta, .nav-pill {
+    transform: translate(var(--magnet-x,0px), var(--magnet-y,0px));
+    transition: transform 240ms var(--motion-ease), background 200ms ease, color 200ms ease;
+}
+.cta:active, .nav-pill:active { transform: scale(.975); }
+.cta-arrow { transition: transform 280ms var(--motion-ease); }
+.text-link, .case-back, .contact-link-item { transition: opacity 200ms ease, color 200ms ease; }
+.text-link:hover, .case-back:hover { opacity: .65; }
+.case-back:active { opacity: .5; }
+.card-image img, .case-cover img { transition: transform 550ms var(--motion-ease); }
+.card-overlay { background: rgba(17,17,17,.38); transition: opacity 350ms var(--motion-ease); }
+.card-overlay--wip { background: rgba(17,17,17,.3); }
+.card-link:focus-visible .card-overlay { opacity: 1; }
+.card-link:focus-visible .card-image img { transform: scale(1.025); }
+.case-gallery figure { transition: border-color 250ms ease; }
+.case-gallery figure:hover { border-color: var(--gray-1); }
+.nav-links a::after { transition: width 280ms var(--motion-ease); }
+
+/* Native cursor remains available; this ring adds a quiet physical response. */
+.pointer-ring {
+    position: fixed; top: 0; left: 0; z-index: 1000;
+    width: 30px; height: 30px; border: 1px solid #fff;
+    border-radius: 50%; pointer-events: none; opacity: 0;
+    mix-blend-mode: difference;
+    transition: opacity 180ms ease, width 220ms var(--motion-ease), height 220ms var(--motion-ease);
+}
+.pointer-ring.is-visible { opacity: .45; }
+.pointer-ring.is-link { width: 42px; height: 42px; opacity: .7; }
+.pointer-ring.is-project { width: 54px; height: 54px; }
+.pointer-ring.is-pressed { width: 22px; height: 22px; }
+.motion-control {
+    position: fixed; right: 20px; bottom: 20px; z-index: 110;
+    padding: 9px 12px; border: 1px solid var(--gray-2); border-radius: 30px;
+    background: var(--white); color: var(--gray-1);
+    font-family: var(--mono); font-size: 10px; letter-spacing: .02em;
+    transition: border-color 180ms ease, color 180ms ease;
+}
+.motion-control:hover { color: var(--black); border-color: var(--black); }
+.motion-control::before {
+    content: ''; display: inline-block; width: 5px; height: 5px;
+    margin-right: 7px; border-radius: 50%; background: var(--gray-2); vertical-align: middle;
+}
+.motion-control[aria-pressed="true"]::before { background: var(--black); }
+html.motion-off *, html.motion-off *::before, html.motion-off *::after {
+    animation-duration: .01ms !important; transition-duration: .01ms !important;
+}
+html.motion-off { scroll-behavior: auto; }
+html.motion-off .pointer-ring { display: none; }
+html.motion-off .cta, html.motion-off .nav-pill, html.motion-off .card-link { transform: none !important; }
+html.motion-off [data-reveal] { opacity: 1; transform: none; }
+
+@media (hover:hover) and (pointer:fine) {
+    .motion-ready .project-card.visible:hover { transform: translateY(-3px); transition-duration: 380ms; }
+    .project-card .card-link:hover .card-image img { transform: scale(1.025); }
+    a.case-cover:hover img { transform: scale(1.018); }
+}
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: motion-out 180ms ease both; }
+::view-transition-new(root) { animation: motion-in 260ms var(--motion-ease) both; }
+@keyframes motion-out { to { opacity: 0; } }
+@keyframes motion-in { from { opacity: 0; transform: translateY(6px); } }
+html.motion-off::view-transition-group(*), html.motion-off::view-transition-old(root), html.motion-off::view-transition-new(root) { animation: none; }
+@media (prefers-reduced-motion:reduce) {
+    html:not(.motion-override) { scroll-behavior: auto; }
+    html:not(.motion-override) .pointer-ring { display: none; }
+    html:not(.motion-override) [data-reveal] { opacity: 1; transform: none; transition: none; }
+    html:not(.motion-override) .cta, html:not(.motion-override) .nav-pill, html:not(.motion-override) .card-link { transform: none !important; }
+    html:not(.motion-override)::view-transition-group(*), html:not(.motion-override)::view-transition-old(root), html:not(.motion-override)::view-transition-new(root) { animation: none; }
+}
