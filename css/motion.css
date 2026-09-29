@@ -47,19 +47,6 @@ html::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .pointer-ring.is-link { width: 42px; height: 42px; opacity: .7; }
 .pointer-ring.is-project { width: 54px; height: 54px; }
 .pointer-ring.is-pressed { width: 22px; height: 22px; }
-.motion-control {
-    position: fixed; right: 20px; bottom: 20px; z-index: 110;
-    padding: 9px 12px; border: 1px solid var(--gray-2); border-radius: 30px;
-    background: var(--white); color: var(--gray-1);
-    font-family: var(--mono); font-size: 10px; letter-spacing: .02em;
-    transition: border-color 180ms ease, color 180ms ease;
-}
-.motion-control:hover { color: var(--black); border-color: var(--black); }
-.motion-control::before {
-    content: ''; display: inline-block; width: 5px; height: 5px;
-    margin-right: 7px; border-radius: 50%; background: var(--gray-2); vertical-align: middle;
-}
-.motion-control[aria-pressed="true"]::before { background: var(--black); }
 html.motion-off *, html.motion-off *::before, html.motion-off *::after {
     animation-duration: .01ms !important; transition-duration: .01ms !important;
 }

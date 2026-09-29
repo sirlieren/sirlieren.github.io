@@ -1,27 +1,12 @@
 /* Progressive enhancement: no scroll hijacking or delayed navigation. */
 (() => {
     'use strict';
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const fine = matchMedia('(hover: hover) and (pointer: fine)');
     const root = document.documentElement;
-    let preference = null;
-    try {
-        const saved = localStorage.getItem('eren-motion');
-        if (saved === 'on' || saved === 'off') preference = saved;
-    } catch (_) { /* Storage is optional. */ }
-    const enabled = () => preference ? preference === 'on' : !reduced.matches;
-    const control = document.createElement('button');
-    control.className = 'motion-control';
-    control.type = 'button';
-    document.body.append(control);
+    const enabled = () => true;
     const syncMotion = () => {
-        const active = enabled();
-        root.classList.toggle('motion-ready', active);
-        root.classList.toggle('motion-off', !active);
-        root.classList.toggle('motion-override', preference === 'on');
-        control.textContent = active ? 'Motion on' : 'Enable motion';
-        control.setAttribute('aria-pressed', String(active));
-        control.setAttribute('aria-label', active ? 'Disable animations' : 'Enable animations');
+        root.classList.add('motion-ready', 'motion-override');
+        root.classList.remove('motion-off');
     };
     syncMotion();
 
@@ -110,19 +95,6 @@
         el.addEventListener('pointerleave', () => resetButton(el));
         el.addEventListener('blur', () => resetButton(el));
     });
-    const updatePreference = () => {
-        syncMotion(); hideRing();
-        introAnimations.forEach(animation => animation.cancel());
-        buttons.forEach(resetButton);
-        if (!enabled()) revealElements.forEach(el => el.classList.add('visible'));
-    };
-    control.addEventListener('click', () => {
-        preference = enabled() ? 'off' : 'on';
-        try { localStorage.setItem('eren-motion', preference); } catch (_) { /* Optional. */ }
-        updatePreference();
-        playIntro();
-    });
-    reduced.addEventListener('change', updatePreference);
     fine.addEventListener('change', () => { hideRing(); buttons.forEach(resetButton); });
 
     // Case studies share the navbar treatment without loading home-specific code.
